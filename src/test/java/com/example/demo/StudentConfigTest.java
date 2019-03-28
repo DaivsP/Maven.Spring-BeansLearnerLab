@@ -23,10 +23,12 @@ public class StudentConfigTest {
     @Test
     public void currentStudentTest() {
         Assert.assertNotNull(currentStudents);
+        Assert.assertEquals(currentStudents.size(), new Integer(2));
     }
 
     @Test
     public void previousStudentsTest() {
         Assert.assertNotNull(previousStudents);
+        Assert.assertEquals(previousStudents.size(), new Integer(1));
     }
 }

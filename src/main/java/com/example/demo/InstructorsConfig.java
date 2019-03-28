@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -9,21 +10,25 @@ import java.util.ArrayList;
 @Configuration
 public class InstructorsConfig {
 
-    private Instructors instructors;
-
-    @Bean
+    @Bean(name = "UsaInstructors")
     public Instructors tcUsaInstructors(){
-        return instructors = new Instructors(new ArrayList<>(), 6);
+        Instructors instructors = new Instructors(new ArrayList<>());
+        instructors.add(new Instructor(11, "Davis"));
+        return instructors;
     }
 
-    @Bean
+    @Bean(name = "UkInstructors")
     public Instructors tcUkInstructors(){
-        return instructors = new Instructors(new ArrayList<>(), 7);
+        Instructors instructors = new Instructors(new ArrayList<>());
+        instructors.add(new Instructor(12, "Davis"));
+        return instructors;
     }
 
     @Bean
     @Primary
     public Instructors instructors(){
-        return instructors = new Instructors(new ArrayList<>(), 5);
+        Instructors instructors = new Instructors(new ArrayList<>());
+        instructors.add(new Instructor(10, "Davis"));
+        return instructors;
     }
 }

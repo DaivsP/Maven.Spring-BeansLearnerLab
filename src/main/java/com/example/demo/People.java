@@ -11,10 +11,6 @@ public abstract class People<PersonType extends Person> {
         this.personList = personList;
     }
 
-    public People(List<PersonType> personList, Integer people){
-        personList = new ArrayList<>(people);
-    }
-
     public void add(PersonType person){
         personList.add(person);
     }

@@ -7,15 +7,19 @@ import java.util.ArrayList;
 
 @Configuration
 public class StudentConfig {
-    private Students students;
 
     @Bean(name = "students")
     public Students currentStudent(){
-        return students = new Students(new ArrayList<>(), 40);
+        Students students = new Students(new ArrayList<>());
+        students.add(new Student(10, "Davis"));
+        students.add(new Student(11, "Mike"));
+        return students;
     }
 
     @Bean
     public Students previousStudents(){
-        return students = new Students(new ArrayList<>(), 35);
+        Students students = new Students(new ArrayList<>());
+        students.add(new Student(12, "Davis"));
+        return students;
     }
 }

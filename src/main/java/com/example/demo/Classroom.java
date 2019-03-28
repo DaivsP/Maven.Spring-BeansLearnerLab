@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+
 public class Classroom {
     Instructors instructors;
     Students students;
@@ -10,7 +12,7 @@ public class Classroom {
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours){
-        teacher.lecture(students.personList, numberOfHours);
+        teacher.lecture(new ArrayList<>(10), numberOfHours);
     }
 
     public Instructors getInstructors() {
