@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -8,17 +9,17 @@ import java.util.ArrayList;
 
 @Configuration
 public class ClassroomConfig {
-    Classroom classroom;
 
     @Bean
     @DependsOn({"instructors", "students"})
-    public Classroom currentCohort(){
-        return classroom = new Classroom(new Instructors(new ArrayList<>()), new Students(new ArrayList<>()));
+    public Classroom currentCohort(Instructors instructors, Students students){
+        return new Classroom(instructors, students);
+
     }
 
     @Bean
     @DependsOn({"instructors", "previousStudents"})
-    public Classroom previousCohort(){
-        return classroom = new Classroom(new Instructors(new ArrayList<>()), new Students(new ArrayList<>()));
+    public Classroom previousCohort(Instructors instructors, @Qualifier("previousStudents") Students previousStudents){
+        return new Classroom(instructors, previousStudents);
     }
 }
