@@ -5,13 +5,13 @@ import java.util.Collection;
 import java.util.List;
 
 public abstract class People<PersonType extends Person> {
-    List<PersonType> personList;
+    private List<PersonType> personList;
 
-    People(List<PersonType> personList){
+    public People(List<PersonType> personList){
         this.personList = personList;
     }
 
-    People(List<PersonType> personList, Integer people){
+    public People(List<PersonType> personList, Integer people){
         personList = new ArrayList<>(people);
     }
 
