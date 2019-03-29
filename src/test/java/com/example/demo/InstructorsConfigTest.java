@@ -28,18 +28,21 @@ public class InstructorsConfigTest {
     @Test
     public void tcUsaInstructorsTest() {
         Assert.assertNotNull(UsaInstructors);
-        Assert.assertNotNull(UsaInstructors.findById(11));
+        Assert.assertNotNull(UsaInstructors.findById(14));
+        Assert.assertNotNull(UsaInstructors.findById(15));
     }
 
     @Test
     public void tcUkInstructorsTest() {
         Assert.assertNotNull(UkInstructors);
-        Assert.assertNotNull(UkInstructors.findById(12));
+        Assert.assertNotNull(UkInstructors.findById(13));
     }
 
     @Test
     public void InstructorsTest() {
         Assert.assertNotNull(instructors);
         Assert.assertNotNull(instructors.findById(10));
+        Assert.assertNotNull(instructors.findById(11));
+        Assert.assertNotNull(instructors.findById(12));
     }
 }

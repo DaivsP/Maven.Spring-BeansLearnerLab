@@ -2,9 +2,10 @@ package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
-public abstract class People<PersonType extends Person> {
+public abstract class People<PersonType extends Person> implements Iterable<PersonType> {
     private List<PersonType> personList;
 
     public People(List<PersonType> personList){
@@ -44,5 +45,10 @@ public abstract class People<PersonType extends Person> {
         personList.stream()
         .map(personType -> personList)
         .forEach(System.out::println);
+    }
+
+    @Override
+    public Iterator<PersonType> iterator() {
+        return personList.iterator();
     }
 }

@@ -13,14 +13,15 @@ public class InstructorsConfig {
     @Bean(name = "UsaInstructors")
     public Instructors tcUsaInstructors(){
         Instructors instructors = new Instructors(new ArrayList<>());
-        instructors.add(new Instructor(11, "Davis"));
+        instructors.add(new Instructor(14, "Davis"));
+        instructors.add(new Instructor(15, "Mike"));
         return instructors;
     }
 
     @Bean(name = "UkInstructors")
     public Instructors tcUkInstructors(){
         Instructors instructors = new Instructors(new ArrayList<>());
-        instructors.add(new Instructor(12, "Davis"));
+        instructors.add(new Instructor(13, "Davis"));
         return instructors;
     }
 
@@ -29,6 +30,8 @@ public class InstructorsConfig {
     public Instructors instructors(){
         Instructors instructors = new Instructors(new ArrayList<>());
         instructors.add(new Instructor(10, "Davis"));
+        instructors.add(new Instructor(11, "Cara"));
+        instructors.add(new Instructor(12, "Sean"));
         return instructors;
     }
 }

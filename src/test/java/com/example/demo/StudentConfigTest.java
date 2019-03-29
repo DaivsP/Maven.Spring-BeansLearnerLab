@@ -24,13 +24,14 @@ public class StudentConfigTest {
     public void currentStudentTest() {
         Assert.assertNotNull(currentStudents);
         Assert.assertEquals(currentStudents.size(), new Integer(2));
+        Assert.assertNotNull(currentStudents.findById(10));
+        Assert.assertNotNull(currentStudents.findById(11));
     }
 
     @Test
     public void previousStudentsTest() {
         Assert.assertNotNull(previousStudents);
         Assert.assertEquals(previousStudents.size(), new Integer(1));
+        Assert.assertNotNull(previousStudents.findById(12));
     }
-
-    //adding new lines to have to do save
 }
